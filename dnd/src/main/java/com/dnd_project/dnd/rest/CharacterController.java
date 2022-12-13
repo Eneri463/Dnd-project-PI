@@ -29,4 +29,11 @@ public class CharacterController {
         return characterRepository.findByName(name);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/findSomeInformation")
+    public List<Object[]> getCharacterInfo(@RequestParam String name)
+    {
+        return characterRepository.searchCustom(name);
+    }
+
 }
