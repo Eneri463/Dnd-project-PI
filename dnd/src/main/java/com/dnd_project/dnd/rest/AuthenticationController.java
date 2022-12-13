@@ -6,15 +6,13 @@ import com.dnd_project.dnd.repository.UserRepository;
 import com.dnd_project.dnd.security.JwtTokenProvider;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -60,4 +58,21 @@ public class AuthenticationController {
         SecurityContextLogoutHandler securityContextLogoutHandler = new SecurityContextLogoutHandler();
         securityContextLogoutHandler.logout(request,response,null);
     }
+
+    @GetMapping("/getUserInfo")
+    public ResponseEntity<?> userInfo(@RequestParam String login)
+    {
+        try {
+
+            User user = userRepository.findByLogin(login).orElseThrow();
+            Map<Object, Object> response = new HashMap<>();
+            response.put("login", user.getLogin());
+            return ResponseEntity.ok(response);
+
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
 }
