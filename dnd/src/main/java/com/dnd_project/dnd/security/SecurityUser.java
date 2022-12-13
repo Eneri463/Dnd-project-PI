@@ -1,5 +1,6 @@
 package com.dnd_project.dnd.security;
 
+import com.dnd_project.dnd.model.Role;
 import com.dnd_project.dnd.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -58,7 +59,7 @@ public class SecurityUser implements UserDetails{
     {
         return new org.springframework.security.core.userdetails.User(
                 user.getLogin(), user.getPassword(),
-                user.getRole().getAuthorities()
+                Role.USER.getAuthorities()
         );
     }
 }

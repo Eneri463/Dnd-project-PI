@@ -1,5 +1,6 @@
 package com.dnd_project.dnd.rest;
 
+import com.dnd_project.dnd.model.Role;
 import com.dnd_project.dnd.model.User;
 import com.dnd_project.dnd.repository.UserRepository;
 import com.dnd_project.dnd.security.JwtTokenProvider;
@@ -40,7 +41,7 @@ public class AuthenticationController {
         {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getLogin(), request.getPassword()));
             User user = userRepository.findByLogin(request.getLogin()).orElseThrow(()->new UsernameNotFoundException("User doesn't exists"));
-            String token = jwtTokenProvider.createToken(request.getLogin(), user.getRole().name());
+            String token = jwtTokenProvider.createToken(request.getLogin(), Role.USER.name());
             Map<Object, Object> response = new HashMap<>();
             response.put("token", token);
 
