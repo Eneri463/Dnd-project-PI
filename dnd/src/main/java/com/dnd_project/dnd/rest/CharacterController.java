@@ -26,7 +26,7 @@ public class CharacterController {
     public List<Object[]> getCharacter(@RequestParam String name)
 
     {
-        return characterRepository.findByCharname(name);
+        return characterRepository.findByName(name);
     }
 
 }

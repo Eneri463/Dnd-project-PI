@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
-
+@Data
 @Entity
-@Table(name = "charclasstable")
+@Table(name = "class_table")
 public class ClassTable {
 
     @Id
@@ -21,39 +21,8 @@ public class ClassTable {
     @Column(name = "description")
     private String description;
 
-    @OneToOne(mappedBy = "charclasstable")
+    @OneToOne(mappedBy = "classtable")
     @JsonBackReference
     private CharacterTable characterTable;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public CharacterTable getCharacterTable() {
-        return characterTable;
-    }
-
-    public void setCharacterTable(CharacterTable characterTable) {
-        this.characterTable = characterTable;
-    }
 }

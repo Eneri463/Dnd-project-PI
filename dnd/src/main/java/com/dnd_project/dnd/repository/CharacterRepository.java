@@ -7,6 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CharacterRepository extends JpaRepository<CharacterTable, Long> {
-    List<Object[]> findByCharname(String name);
+    List<Object[]> findByName(String name);
 
 }
