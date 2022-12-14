@@ -41,6 +41,21 @@ public class CharacterTable {
     @Column(name = "charisma")
     private Integer charisma;
 
+    @Column(name = "hp")
+    private Integer hp;
+
+    @Column(name = "addhp")
+    private Integer addHp;
+
+    @Column(name = "maxhp")
+    private Integer maxHp;
+
+    @Column(name = "classarmor")
+    private Integer classArmor;
+
+    @Column(name = "proficiencybonus")
+    private Integer proficiencyBonus;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "classID", referencedColumnName = "id")
     @JsonManagedReference
@@ -65,4 +80,8 @@ public class CharacterTable {
     @JoinColumn(name = "ideologyID", referencedColumnName = "id")
     @JsonManagedReference
     private Ideologies ideology;
+
+    //@OneToOne(mappedBy = "charTable")
+    //@JsonBackReference
+    //private CharacterListTable charTable;
 }

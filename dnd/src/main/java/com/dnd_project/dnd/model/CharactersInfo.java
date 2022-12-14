@@ -1,6 +1,6 @@
 package com.dnd_project.dnd.model;
 
-public interface CharacterInfo {
+public interface CharactersInfo {
     Integer getId();
     String getName();
     Integer getAge();
@@ -11,7 +11,12 @@ public interface CharacterInfo {
     Integer getIntelligence();
     Integer getWisdom();
     Integer getCharisma();
-    String getClassname();
+    Integer getHp();
+    Integer getMaxHp();
+    Integer getAddHp();
+    Integer getClassArmor();
+    Integer getProficiencyBonus();
+    String getClassName();
     String getGender();
     String getRace();
     String getBackground();

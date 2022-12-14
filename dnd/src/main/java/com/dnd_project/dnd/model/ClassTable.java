@@ -16,7 +16,7 @@ public class ClassTable {
     private Long id;
 
     @Column(name = "name")
-    private String classname;
+    private String className;
 
     @Column(name = "description")
     private String description;
