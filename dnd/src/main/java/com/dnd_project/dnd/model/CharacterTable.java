@@ -12,7 +12,7 @@ public class CharacterTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long charID;
 
     @Column(name = "name")
     private String name;
@@ -81,7 +81,7 @@ public class CharacterTable {
     @JsonManagedReference
     private Ideologies ideology;
 
-    //@OneToOne(mappedBy = "charTable")
-    //@JsonBackReference
-    //private CharacterListTable charTable;
+    @OneToOne(mappedBy = "charTable")
+    @JsonBackReference
+    private CharacterListTable characterListTable;
 }

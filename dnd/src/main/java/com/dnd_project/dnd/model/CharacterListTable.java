@@ -17,9 +17,9 @@ public class CharacterListTable {
     @Column(name = "userID")
     private Long userID;
 
-    //@ManyToOne(cascade = CascadeType.ALL)
-    //@JoinColumn(name = "charID", referencedColumnName = "charID")
-    //@JsonManagedReference
-    //private CharacterTable charTable;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "charID", referencedColumnName = "charID")
+    @JsonManagedReference
+    private CharacterTable charTable;
 
 }
