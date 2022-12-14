@@ -1,5 +1,6 @@
 package com.dnd_project.dnd.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -13,5 +14,9 @@ public class Genders {
     private Long id;
 
     @Column(name = "name")
-    private String gendersName;
+    private String gender;
+
+    @OneToOne(mappedBy = "genders")
+    @JsonBackReference
+    private CharacterTable charactertable;
 }

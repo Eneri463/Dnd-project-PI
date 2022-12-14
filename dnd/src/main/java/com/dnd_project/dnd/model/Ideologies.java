@@ -1,5 +1,6 @@
 package com.dnd_project.dnd.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,4 +15,11 @@ public class Ideologies {
 
     @Column(name = "name")
     private String ideologiesName;
+
+    @Column(name = "description")
+    private String description;
+
+    @OneToOne(mappedBy = "ideology")
+    @JsonBackReference
+    private CharacterTable charactertable;
 }

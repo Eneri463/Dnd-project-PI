@@ -1,5 +1,6 @@
 package com.dnd_project.dnd.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,4 +18,8 @@ public class Race {
 
     @Column(name = "description")
     private Integer description;
+
+    @OneToOne(mappedBy = "race")
+    @JsonBackReference
+    private CharacterTable charactertable;
 }
