@@ -1,5 +1,6 @@
 package com.dnd_project.dnd.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,5 +17,9 @@ public class Worlds {
     private String name;
 
     @Column(name = "description")
-    private Integer description;
+    private String description;
+
+    @OneToOne(mappedBy = "worlds")
+    @JsonBackReference
+    private WorldsLinks worldsLinks;
 }

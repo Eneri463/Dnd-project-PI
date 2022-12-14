@@ -14,6 +14,6 @@ public interface CharacterRepository extends JpaRepository<CharacterTable, Long>
             "t.dexterity as dexterity, t.constitution as constitution, t.intelligence as intelligence, t.wisdom as wisdom, " +
             "t.charisma as charisma, t.hp as hp, t.addHp as addHp, t.maxHp as maxHp, t.classArmor as classArmor, t.proficiencyBonus as proficiencyBonus " +
             "from CharacterTable t where t.charID = :id")
-    List<CharactersInfo> searchCharactersInfo(Long id);
+    CharactersInfo searchCharactersInfo(Long id);
 
 }

@@ -1,6 +1,7 @@
 package com.dnd_project.dnd.model;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -11,11 +12,14 @@ import javax.persistence.*;
 public class WorldsLinks {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id")
+    private Long linksId;
 
     @Column(name = "userID")
     private Long userID;
 
-    @Column(name = "characterID")
-    private Long worldID;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "worldID", referencedColumnName = "id")
+    @JsonManagedReference
+    private Worlds worlds;
 }

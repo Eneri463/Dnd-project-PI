@@ -15,7 +15,7 @@ public class CharacterController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/characterInfo")
-    public List<CharactersInfo> getCharacterInfo(@RequestParam Long id)
+    public CharactersInfo getCharacterInfo(@RequestParam Long id)
     {
         return characterRepository.searchCharactersInfo(id);
     }
