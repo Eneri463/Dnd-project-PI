@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface UsersCharactersRepository extends JpaRepository<CharacterListTable, Long> {
-    
+
     @Query("select t.charTable.name as name, t.charTable.charID as charID,  t.charTable.classtable.className as className," +
             " t.charTable.level as level " +
             "from CharacterListTable t where t.userID = :id")
