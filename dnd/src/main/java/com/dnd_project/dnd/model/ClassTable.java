@@ -16,13 +16,12 @@ public class ClassTable {
     private Long id;
 
     @Column(name = "name")
-    private String name;
+    private String classname;
 
     @Column(name = "description")
     private String description;
 
     @OneToOne(mappedBy = "classtable")
     @JsonBackReference
-    private CharacterTable characterTable;
-
+    private CharacterTable charactertable;
 }

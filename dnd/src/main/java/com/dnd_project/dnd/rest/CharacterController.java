@@ -1,5 +1,6 @@
 package com.dnd_project.dnd.rest;
 
+import com.dnd_project.dnd.model.CharacterInfo;
 import com.dnd_project.dnd.model.CharacterTable;
 import com.dnd_project.dnd.model.User;
 import com.dnd_project.dnd.repository.CharacterRepository;
@@ -31,7 +32,7 @@ public class CharacterController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/findSomeInformation")
-    public List<Object[]> getCharacterInfo(@RequestParam String name)
+    public List<CharacterInfo> getCharacterInfo(@RequestParam String name)
     {
         return characterRepository.searchCustom(name);
     }

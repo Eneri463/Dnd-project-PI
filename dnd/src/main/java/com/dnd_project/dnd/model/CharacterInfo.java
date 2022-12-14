@@ -1,12 +1,12 @@
 package com.dnd_project.dnd.model;
 
-import lombok.Data;
+public interface CharacterInfo {
+    Integer getId();
+    String getName();
+    String getAge();
+    String getClassname();
 
-@Data
-public class CharacterInfo {
-    Long id;
-    String name;
-    Integer age;
-    String class_name;
+    public interface ClassTable {
+        String getClassname();
+    }
 }
-
