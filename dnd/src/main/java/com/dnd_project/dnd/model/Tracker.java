@@ -13,14 +13,26 @@ public class Tracker {
     private Long id;
 
     @Column(name = "worldID")
-    private Integer worldID;
+    private Long worldID;
 
     @Column(name = "name")
     private String name;
 
     @Column(name = "initiative")
-    private Integer initiative;
+    private Double initiative;
 
     @Column(name = "color")
     private String color;
+
+    public Tracker(Long worldID, String name, Double initiative, String color) {
+        this.worldID = worldID;
+        this.name = name;
+        this.initiative = initiative;
+        this.color = color;
+    }
+
+    public Tracker()
+    {
+
+    }
 }

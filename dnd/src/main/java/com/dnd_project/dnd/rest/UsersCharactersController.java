@@ -1,9 +1,7 @@
 package com.dnd_project.dnd.rest;
 
-import com.dnd_project.dnd.model.CharactersInfo;
 import com.dnd_project.dnd.model.User;
 import com.dnd_project.dnd.model.UsersCharacters;
-import com.dnd_project.dnd.repository.CharacterRepository;
 import com.dnd_project.dnd.repository.UserRepository;
 import com.dnd_project.dnd.repository.UsersCharactersRepository;
 import org.springframework.beans.factory.annotation.Autowired;

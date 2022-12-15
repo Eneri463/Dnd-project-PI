@@ -1,10 +1,8 @@
 package com.dnd_project.dnd.rest;
 
 import com.dnd_project.dnd.model.User;
-import com.dnd_project.dnd.model.UsersCharacters;
 import com.dnd_project.dnd.model.UsersWorlds;
 import com.dnd_project.dnd.repository.UserRepository;
-import com.dnd_project.dnd.repository.UsersCharactersRepository;
 import com.dnd_project.dnd.repository.WorldsListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
