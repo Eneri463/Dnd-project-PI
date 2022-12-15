@@ -19,8 +19,4 @@ public class SkillList {
 
     @Column(name = "description")
     private String description;
-
-    @OneToOne(mappedBy = "skillList")
-    @JsonBackReference
-    private SkillListCharacter skillListCharacter;
 }

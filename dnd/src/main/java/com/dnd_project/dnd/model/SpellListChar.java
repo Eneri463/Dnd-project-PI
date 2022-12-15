@@ -7,18 +7,18 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "spell_list_character")
-public class SpellListCharacter {
+@Table(name = "spell_list_char")
+public class SpellListChar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "charId")
+    @Column(name = "charID")
     private Long charId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "spellId", referencedColumnName = "id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "spellID", referencedColumnName = "id")
     @JsonManagedReference
     private SpellList spellList;
 

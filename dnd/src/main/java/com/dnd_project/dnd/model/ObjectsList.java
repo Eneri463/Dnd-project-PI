@@ -1,6 +1,5 @@
 package com.dnd_project.dnd.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,8 +18,4 @@ public class ObjectsList {
 
     @Column(name = "description")
     private String description;
-
-    @OneToOne(mappedBy = "objectsList")
-    @JsonBackReference
-    private InventoryListCharacter inventoryListCharacter;
 }

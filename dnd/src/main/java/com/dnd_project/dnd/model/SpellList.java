@@ -22,8 +22,4 @@ public class SpellList {
 
     @Column(name = "level")
     private Integer level;
-
-    @OneToOne(mappedBy = "spellList")
-    @JsonBackReference
-    private SpellListCharacter spellListCharacter;
 }

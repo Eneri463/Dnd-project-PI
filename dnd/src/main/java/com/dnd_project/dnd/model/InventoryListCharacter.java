@@ -16,7 +16,7 @@ public class InventoryListCharacter {
     @Column(name = "charId")
     private Long charId;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "objectId", referencedColumnName = "id")
     @JsonManagedReference
     private ObjectsList objectsList;

@@ -16,7 +16,7 @@ public class SkillListCharacter {
     @Column(name = "charId")
     private Long charId;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "skillId", referencedColumnName = "id")
     @JsonManagedReference
     private SkillList skillList;
