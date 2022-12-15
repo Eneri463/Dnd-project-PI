@@ -9,5 +9,5 @@ import java.util.List;
 @Data
 public class TrackerBody {
     public Long id;
-    public List<Tracker> t;
+    public List<Tracker> tracker;
 }

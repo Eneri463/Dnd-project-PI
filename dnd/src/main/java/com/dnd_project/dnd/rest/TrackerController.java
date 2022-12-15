@@ -35,8 +35,8 @@ public class TrackerController {
                 return new ResponseEntity<>(e.getCause(), HttpStatus.BAD_REQUEST);
             }
 
-            for (int i = 0; i < request.t.size(); i++) {
-                Tracker tr = new Tracker(request.id, request.t.get(i).getName(), request.t.get(i).getInitiative(), request.t.get(i).getColor());
+            for (int i = 0; i < request.tracker.size(); i++) {
+                Tracker tr = new Tracker(request.id, request.tracker.get(i).getName(), request.tracker.get(i).getInitiative(), request.tracker.get(i).getColor());
                 trackerRepository.save(tr);
             }
 

@@ -20,8 +20,4 @@ public class ClassTable {
 
     @Column(name = "description")
     private String description;
-
-    @OneToOne(mappedBy = "classtable")
-    @JsonBackReference
-    private CharacterTable charactertable;
 }

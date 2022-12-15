@@ -17,9 +17,5 @@ public class Race {
     private String raceName;
 
     @Column(name = "description")
-    private Integer description;
-
-    @OneToOne(mappedBy = "race")
-    @JsonBackReference
-    private CharacterTable charactertable;
+    private String description;
 }

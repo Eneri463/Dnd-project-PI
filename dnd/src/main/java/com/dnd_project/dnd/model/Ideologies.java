@@ -18,8 +18,4 @@ public class Ideologies {
 
     @Column(name = "description")
     private String description;
-
-    @OneToOne(mappedBy = "ideology")
-    @JsonBackReference
-    private CharacterTable charactertable;
 }

@@ -21,5 +21,14 @@ public interface CharacterRepository extends JpaRepository<CharacterTable, Long>
     @Modifying
     @Query("delete from CharacterTable where CharID = :id")
     void deleteByCharID(Long id);
+    @Transactional
+    @Modifying
+    @Query(value = "INSERT INTO characters (name, level, age, classID, genderID, raceID, " +
+            "backgroundID, ideologyID, strength, dexterity, constitution, intelligence, wisdom, charisma) " +
+            "VALUES (:name, :level, :age, :classID, :genderID, :raceID, :backgroundID, :ideologyID, :strength, " +
+            ":dexterity, :constitution, :intelligence, :wisdom, :charisma)", nativeQuery = true)
+    CharacterTable saveSpecial(String name, Integer level, Integer age, Integer strength, Integer dexterity, Integer constitution,
+                               Integer intelligence, Integer wisdom, Integer charisma, Long classID, Long genderID, Long raceID,
+                               Long backgroundID, Long ideologyID);
 
 }

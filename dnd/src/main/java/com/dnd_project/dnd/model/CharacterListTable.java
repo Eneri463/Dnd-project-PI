@@ -22,4 +22,12 @@ public class CharacterListTable {
     @JsonManagedReference
     private CharacterTable charTable;
 
+    public CharacterListTable(Long userID, CharacterTable charTable) {
+        this.userID = userID;
+        this.charTable = charTable;
+    }
+
+    public CharacterListTable() {
+    }
+
 }

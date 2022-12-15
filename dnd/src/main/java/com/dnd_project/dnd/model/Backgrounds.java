@@ -17,9 +17,5 @@ public class Backgrounds {
     private String background;
 
     @Column(name = "description")
-    private Integer description;
-
-    @OneToOne(mappedBy = "background")
-    @JsonBackReference
-    private CharacterTable charactertable;
+    private String description;
 }

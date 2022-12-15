@@ -15,8 +15,4 @@ public class Genders {
 
     @Column(name = "name")
     private String gender;
-
-    @OneToOne(mappedBy = "genders")
-    @JsonBackReference
-    private CharacterTable charactertable;
 }
