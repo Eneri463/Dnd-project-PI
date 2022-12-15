@@ -7,17 +7,17 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "skill_list_character")
-public class SkillListCharacter {
+@Table(name = "skill_list_char")
+public class SkillListChar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "charId")
+    @Column(name = "charID")
     private Long charId;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "skillId", referencedColumnName = "id")
+    @JoinColumn(name = "skillID", referencedColumnName = "id")
     @JsonManagedReference
     private SkillList skillList;
 }
