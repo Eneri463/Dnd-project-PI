@@ -13,11 +13,11 @@ public class InventoryListCharacter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "charId")
+    @Column(name = "charID")
     private Long charId;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "objectId", referencedColumnName = "id")
+    @JoinColumn(name = "objectID", referencedColumnName = "id")
     @JsonManagedReference
     private ObjectsList objectsList;
 }
