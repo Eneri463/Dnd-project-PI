@@ -3,6 +3,7 @@ package com.dnd_project.dnd.rest;
 import com.dnd_project.dnd.model.*;
 import com.dnd_project.dnd.repository.UserRepository;
 import com.dnd_project.dnd.repository.WorldsListRepository;
+import com.dnd_project.dnd.repository.WorldsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,8 @@ public class WorldsListController {
 
     @Autowired
     private WorldsListRepository worldsListRepository;
+    @Autowired
+    private WorldsRepository worldsRepository;
     @Autowired
     private UserRepository userRepository;
 
@@ -48,6 +51,23 @@ public class WorldsListController {
             return new ResponseEntity<>(e.getCause(), HttpStatus.BAD_REQUEST);
         }
 
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping("/deleteWorld")
+    public ResponseEntity<?> deleteWorld(@RequestParam Long id)
+    {
+        try {
+
+            worldsRepository.deleteByWorldId(id);
+            worldsListRepository.deleteByWorldId(id);
+
+            return ResponseEntity.ok(id);
+        }
+        catch(Exception e)
+        {
+            return new ResponseEntity<>(e.getCause(), HttpStatus.BAD_REQUEST);
+        }
     }
 
 
