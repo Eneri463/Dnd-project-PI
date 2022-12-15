@@ -18,8 +18,13 @@ public class WorldsLinks {
     @Column(name = "userID")
     private Long userID;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "worldID", referencedColumnName = "id")
     @JsonManagedReference
     private Worlds worlds;
+
+    public WorldsLinks(Long userID, Worlds worlds) {
+        this.userID = userID;
+        this.worlds = worlds;
+    }
 }

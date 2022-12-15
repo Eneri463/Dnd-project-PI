@@ -19,7 +19,8 @@ public class Worlds {
     @Column(name = "description")
     private String description;
 
-    @OneToOne(mappedBy = "worlds")
-    @JsonBackReference
-    private WorldsLinks worldsLinks;
+    public Worlds(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }
