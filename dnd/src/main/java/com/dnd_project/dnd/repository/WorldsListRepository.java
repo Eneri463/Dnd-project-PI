@@ -1,6 +1,5 @@
 package com.dnd_project.dnd.repository;
 
-import com.dnd_project.dnd.model.UsersCharacters;
 import com.dnd_project.dnd.model.UsersWorlds;
 import com.dnd_project.dnd.model.WorldsLinks;
 import org.springframework.data.jpa.repository.JpaRepository;
