@@ -46,25 +46,6 @@ public class CharacterController {
         return characterRepository.searchCharactersInfo(id);
     }
 
-    /*@CrossOrigin(origins = "http://localhost:4200")
-    @DeleteMapping("/deleteCharacter")
-    public ResponseEntity<?> deleteCharacter(@RequestParam Long id)
-    {
-        try {
-            characterRepository.deleteByCharID(id);
-            usersCharactersRepository.deleteByCharID(id);
-            spellListCharacterRepository.deleteByCharID(id);
-            skillListCharacterRepository.deleteByCharID(id);
-            inventoryListRepository.deleteByCharID(id);
-
-            return ResponseEntity.ok(id);
-        }
-        catch(Exception e)
-        {
-            return new ResponseEntity<>(e.getCause(), HttpStatus.BAD_REQUEST);
-        }
-    }*/
-
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/deleteCharacter")
     public ResponseEntity<?> deleteCharacter(@RequestBody delCharacterBody request)

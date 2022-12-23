@@ -5,7 +5,6 @@ import lombok.Data;
 @Data
 public class CharStructure {
 
-    private Long charID;
     private String name;
     private Integer level;
     private Integer age;
