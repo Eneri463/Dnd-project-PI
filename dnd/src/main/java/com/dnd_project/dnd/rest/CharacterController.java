@@ -47,8 +47,8 @@ public class CharacterController {
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @PutMapping("/deleteCharacter")
-    public ResponseEntity<?> deleteCharacter(@RequestBody delCharacterBody request)апр
+    @DeleteMapping("/deleteCharacter")
+    public ResponseEntity<?> deleteCharacter(@RequestBody delCharacterBody request)
     {
         try {
 
