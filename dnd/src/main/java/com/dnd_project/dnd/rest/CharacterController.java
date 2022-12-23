@@ -46,7 +46,7 @@ public class CharacterController {
         return characterRepository.searchCharactersInfo(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    /*@CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/deleteCharacter")
     public ResponseEntity<?> deleteCharacter(@RequestParam Long id)
     {
@@ -63,11 +63,36 @@ public class CharacterController {
         {
             return new ResponseEntity<>(e.getCause(), HttpStatus.BAD_REQUEST);
         }
+    }*/
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping("/deleteCharacter")
+    public ResponseEntity<?> deleteCharacter(@RequestBody delCharacterBody request)
+    {
+        try {
+
+            for (int i=0; i<request.id.length; i++)
+            {
+                characterRepository.deleteByCharID(request.id[i]);
+                usersCharactersRepository.deleteByCharID(request.id[i]);
+                spellListCharacterRepository.deleteByCharID(request.id[i]);
+                skillListCharacterRepository.deleteByCharID(request.id[i]);
+                inventoryListRepository.deleteByCharID(request.id[i]);
+            }
+
+            return ResponseEntity.ok(request.id.length);
+        }
+        catch(Exception e)
+        {
+            return new ResponseEntity<>(e.getCause(), HttpStatus.BAD_REQUEST);
+        }
     }
+
+
 
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/createCharacter")
-    public ResponseEntity<?> editTracker(@RequestBody CreateCharBody request) {
+    public ResponseEntity<?> createCharacter(@RequestBody CreateCharBody request) {
 
         try
         {
@@ -99,6 +124,8 @@ public class CharacterController {
         }
 
     }
+
+
 
 
 }
