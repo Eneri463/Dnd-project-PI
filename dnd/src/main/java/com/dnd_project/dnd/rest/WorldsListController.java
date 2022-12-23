@@ -32,7 +32,7 @@ public class WorldsListController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/getWorld")
-    public List<UsersWorld> getWorld(@RequestParam Long id) {
+    public UsersWorld getWorld(@RequestParam Long id) {
                 return worldsRepository.searchWorldInfo(id);
     }
 

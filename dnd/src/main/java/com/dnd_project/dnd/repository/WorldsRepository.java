@@ -18,5 +18,5 @@ public interface WorldsRepository extends JpaRepository<Worlds, Long> {
 
     @Query("select t.name as name, t.description as description " +
             "from Worlds t where t.id = :id")
-    List<UsersWorld> searchWorldInfo(Long id);
+    UsersWorld searchWorldInfo(Long id);
 }
