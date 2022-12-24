@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -48,7 +47,7 @@ public class CharacterController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/deleteCharacter")
-    public ResponseEntity<?> deleteCharacter(@RequestBody delCharacterBody request)
+    public ResponseEntity<?> deleteCharacter(@RequestBody delBody request)
     {
         try {
 

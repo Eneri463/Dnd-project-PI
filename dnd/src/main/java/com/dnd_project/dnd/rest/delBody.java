@@ -3,6 +3,6 @@ package com.dnd_project.dnd.rest;
 import lombok.Data;
 
 @Data
-public class delCharacterBody {
+public class delBody {
     Long[] id;
 }
