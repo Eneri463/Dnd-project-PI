@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class delOrAddBody {
-    private Long charID;
-    private Long spellID;
+    private Long charId;
+    private Long spellId;
 }

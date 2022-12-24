@@ -40,13 +40,13 @@ public class CharacterSpellsController {
 
         try
         {
-            Optional<SpellListChar> spellList = spellListCharacterRepository.searchCombination(request.getCharID(), request.getSpellID());
+            Optional<SpellListChar> spellList = spellListCharacterRepository.searchCombination(request.getCharId(), request.getSpellId());
 
             if (spellList.isPresent() == false)
             {
-                Optional<SpellList> spell = spellRepository.searchSpell(request.getSpellID());
+                Optional<SpellList> spell = spellRepository.searchSpell(request.getSpellId());
                 System.out.println(spell.get());
-                SpellListChar spellListChar = new SpellListChar(request.getCharID(), spell.get());
+                SpellListChar spellListChar = new SpellListChar(request.getCharId(), spell.get());
                 spellListCharacterRepository.save(spellListChar);
 
                 return ResponseEntity.ok("ok");

@@ -14,5 +14,5 @@ public class Genders {
     private Long id;
 
     @Column(name = "name")
-    private String gender;
+    private String genderName;
 }

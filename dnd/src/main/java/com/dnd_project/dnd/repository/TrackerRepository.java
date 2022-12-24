@@ -10,13 +10,13 @@ import java.util.List;
 
 public interface TrackerRepository extends JpaRepository<Tracker, Long> {
 
-    @Query("select t.name as name, t.initiative as initiative, t.color as color " +
-            "from Tracker t where t.worldID = :id")
+    @Query("select t.charName as charName, t.initiative as initiative, t.color as color " +
+            "from Tracker t where t.worldId = :id")
     List<TrackerInfo> showInitiative(Long id);
 
     @Transactional
     @Modifying
-    @Query("delete from Tracker where worldID = :id")
+    @Query("delete from Tracker where worldId = :id")
     void deleteByWorldID(Long id);
 
 

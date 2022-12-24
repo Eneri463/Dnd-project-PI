@@ -15,7 +15,7 @@ public class SpellList {
     private Long id;
 
     @Column(name = "name")
-    private String name;
+    private String spellName;
 
     @Column(name = "description")
     private String description;

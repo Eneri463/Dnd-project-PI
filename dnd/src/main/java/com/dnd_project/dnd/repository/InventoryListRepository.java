@@ -15,6 +15,6 @@ public interface InventoryListRepository extends JpaRepository<InventoryListChar
     @Query("delete from InventoryListCharacter where CharId = :id")
     void deleteByCharID(Long id);
 
-    @Query("select t.objectsList.id as id, t.objectsList.name as name, t.objectsList.description as description from InventoryListCharacter t where t.charId = :id")
+    @Query("select t.objectsList.id as id, t.objectsList.objectName as objectName, t.objectsList.description as description from InventoryListCharacter t where t.charId = :id")
     List<CharInventory> searchInventory(Long id);
 }

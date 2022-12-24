@@ -15,15 +15,15 @@ public class CharacterListTable {
     private Long id;
 
     @Column(name = "userID")
-    private Long userID;
+    private Long userId;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "charID", referencedColumnName = "charID")
     @JsonManagedReference
     private CharacterTable charTable;
 
-    public CharacterListTable(Long userID, CharacterTable charTable) {
-        this.userID = userID;
+    public CharacterListTable(Long userId, CharacterTable charTable) {
+        this.userId = userId;
         this.charTable = charTable;
     }
 

@@ -14,7 +14,7 @@ public class Ideologies {
     private Long id;
 
     @Column(name = "name")
-    private String ideologiesName;
+    private String ideologyName;
 
     @Column(name = "description")
     private String description;

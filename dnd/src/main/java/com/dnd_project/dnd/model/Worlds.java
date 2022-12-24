@@ -14,19 +14,19 @@ public class Worlds {
     private Long id;
 
     @Column(name = "name")
-    private String name;
+    private String worldName;
 
     @Column(name = "description")
     private String description;
 
     public Worlds(String name, String description) {
-        this.name = name;
+        this.worldName = name;
         this.description = description;
     }
 
     public Worlds(Long id, String name, String description) {
         this.id = id;
-        this.name = name;
+        this.worldName = name;
         this.description = description;
     }
 

@@ -15,6 +15,6 @@ public interface SkillListCharacterRepository extends JpaRepository<SkillListCha
     @Query("delete from SkillListChar where CharId = :id")
     void deleteByCharID(Long id);
 
-    @Query("select t.skillList.id as id, t.skillList.name as name, t.skillList.description as description from SkillListChar t where t.charId = :id")
+    @Query("select t.skillList.id as id, t.skillList.skillName as skillName, t.skillList.description as description from SkillListChar t where t.charId = :id")
     List<CharSkill> searchSkill(Long id);
 }

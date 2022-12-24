@@ -16,15 +16,15 @@ public class WorldsLinks {
     private Long linksId;
 
     @Column(name = "userID")
-    private Long userID;
+    private Long userId;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "worldID", referencedColumnName = "id")
     @JsonManagedReference
     private Worlds worlds;
 
-    public WorldsLinks(Long userID, Worlds worlds) {
-        this.userID = userID;
+    public WorldsLinks(Long userId, Worlds worlds) {
+        this.userId = userId;
         this.worlds = worlds;
     }
 }

@@ -16,7 +16,7 @@ public interface WorldsRepository extends JpaRepository<Worlds, Long> {
     @Query("delete from Worlds where id = :id")
     void deleteByWorldId(Long id);
 
-    @Query("select t.name as name, t.description as description " +
+    @Query("select t.worldName as worldName, t.description as description " +
             "from Worlds t where t.id = :id")
     UsersWorld searchWorldInfo(Long id);
 }

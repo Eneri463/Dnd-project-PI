@@ -12,10 +12,11 @@ public class CharacterTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long charID;
+    @Column(name = "charID")
+    private Long charId;
 
     @Column(name = "name")
-    private String name;
+    private String charName;
 
     @Column(name = "level")
     private Integer level;
@@ -44,22 +45,22 @@ public class CharacterTable {
     @Column(name = "hp")
     private Integer hp;
 
-    @Column(name = "addhp")
+    @Column(name = "addHP")
     private Integer addHp;
 
-    @Column(name = "maxhp")
+    @Column(name = "maxHP")
     private Integer maxHp;
 
-    @Column(name = "classarmor")
+    @Column(name = "classARMOR")
     private Integer classArmor;
 
-    @Column(name = "proficiencybonus")
+    @Column(name = "proficiencyBONUS")
     private Integer proficiencyBonus;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "classID", referencedColumnName = "id")
     @JsonManagedReference
-    private ClassTable classtable;
+    private ClassTable classTable;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "genderID", referencedColumnName = "id")
@@ -86,7 +87,7 @@ public class CharacterTable {
     private CharacterListTable characterListTable;
 
     public CharacterTable(String name, Integer level, Integer age, Integer strength, Integer dexterity, Integer constitution, Integer intelligence, Integer wisdom, Integer charisma, Integer hp, Integer addHp, Integer maxHp, Integer classArmor, Integer proficiencyBonus, ClassTable classtable, Genders genders, Race race, Backgrounds background, Ideologies ideology) {
-        this.name = name;
+        this.charName = name;
         this.level = level;
         this.age = age;
         this.strength = strength;
@@ -100,7 +101,7 @@ public class CharacterTable {
         this.maxHp = maxHp;
         this.classArmor = classArmor;
         this.proficiencyBonus = proficiencyBonus;
-        this.classtable = classtable;
+        this.classTable = classtable;
         this.genders = genders;
         this.race = race;
         this.background = background;

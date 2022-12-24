@@ -1,7 +1,7 @@
 package com.dnd_project.dnd.model;
 
 public interface CharInventory {
-    String getName();
+    String getObjectName();
     String getDescription();
     Long getId();
 }

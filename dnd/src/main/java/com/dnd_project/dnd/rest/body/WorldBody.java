@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class WorldBody {
     public String login;
-    public String name;
+    public String worldName;
     public String description;
 }

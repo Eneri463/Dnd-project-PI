@@ -11,14 +11,14 @@ import java.util.List;
 
 public interface UsersCharactersRepository extends JpaRepository<CharacterListTable, Long> {
 
-    @Query("select t.charTable.name as name, t.charTable.charID as charID,  t.charTable.classtable.className as className," +
+    @Query("select t.charTable.charName as charName, t.charTable.charId as charId,  t.charTable.classTable.className as className," +
             " t.charTable.level as level " +
-            "from CharacterListTable t where t.userID = :id")
+            "from CharacterListTable t where t.userId = :id")
     List<UsersCharacters> searchCharacters(Long id);
 
     @Transactional
     @Modifying
-    @Query("delete from CharacterListTable where CharID = :id")
+    @Query("delete from CharacterListTable where CharId = :id")
     void deleteByCharID(Long id);
 
 }

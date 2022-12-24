@@ -14,7 +14,7 @@ public class ObjectsList {
     private Long id;
 
     @Column(name = "name")
-    private String name;
+    private String objectName;
 
     @Column(name = "description")
     private String description;

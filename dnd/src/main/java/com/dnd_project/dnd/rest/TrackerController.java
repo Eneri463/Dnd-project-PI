@@ -37,7 +37,7 @@ public class TrackerController {
             }
 
             for (int i = 0; i < request.tracker.size(); i++) {
-                Tracker tr = new Tracker(request.id, request.tracker.get(i).getName(), request.tracker.get(i).getInitiative(), request.tracker.get(i).getColor());
+                Tracker tr = new Tracker(request.id, request.tracker.get(i).getCharName(), request.tracker.get(i).getInitiative(), request.tracker.get(i).getColor());
                 trackerRepository.save(tr);
             }
 

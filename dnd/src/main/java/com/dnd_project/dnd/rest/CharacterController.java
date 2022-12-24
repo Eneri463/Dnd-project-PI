@@ -78,14 +78,14 @@ public class CharacterController {
         try
         {
             Optional<User> user = userRepository.findByLogin(request.login);
-            Backgrounds background = backgroundsRepository.findByIdSpecial(request.charStructure.getBackgroundID());
-            ClassTable classTable = classTableRepository.findByIdSpecial(request.charStructure.getClassID());
-            Genders genders = genderRepository.findByIdSpecial(request.charStructure.getGendersID());
-            Race race = raceRepository.findByIdSpecial(request.charStructure.getRaceID());
-            Ideologies ideology = ideologiesRepository.findByIdSpecial(request.charStructure.getIdeologyID());
+            Backgrounds background = backgroundsRepository.findByIdSpecial(request.charStructure.getBackgroundId());
+            ClassTable classTable = classTableRepository.findByIdSpecial(request.charStructure.getClassId());
+            Genders genders = genderRepository.findByIdSpecial(request.charStructure.getGendersId());
+            Race race = raceRepository.findByIdSpecial(request.charStructure.getRaceId());
+            Ideologies ideology = ideologiesRepository.findByIdSpecial(request.charStructure.getIdeologyId());
 
 
-            CharacterTable NewChar = new CharacterTable(request.charStructure.getName(), request.charStructure.getLevel(),
+            CharacterTable NewChar = new CharacterTable(request.charStructure.getCharName(), request.charStructure.getLevel(),
                     request.charStructure.getAge(), request.charStructure.getStrength(),
                     request.charStructure.getDexterity(), request.charStructure.getConstitution(), request.charStructure.getIntelligence(),
                     request.charStructure.getWisdom(), request.charStructure.getCharisma(),request.charStructure.getHp(),
@@ -212,7 +212,7 @@ public class CharacterController {
             if (charTable.isPresent() == true)
             {
 
-                charTable.get().setName(request.getName());
+                charTable.get().setCharName(request.getCharName());
                 charTable.get().setAge(request.getAge());
 
                 characterRepository.save(charTable.get());

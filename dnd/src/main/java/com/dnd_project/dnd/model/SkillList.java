@@ -15,7 +15,7 @@ public class SkillList {
     private Long id;
 
     @Column(name = "name")
-    private String name;
+    private String skillName;
 
     @Column(name = "description")
     private String description;

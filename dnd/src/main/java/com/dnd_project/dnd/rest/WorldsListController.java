@@ -47,7 +47,7 @@ public class WorldsListController {
         {
             Optional<User> user = userRepository.findByLogin(request.login);
 
-            Worlds world = new Worlds(request.name, request.description);
+            Worlds world = new Worlds(request.worldName, request.description);
 
 
             WorldsLinks NewLinks = new WorldsLinks(user.get().getId(), world);
@@ -93,7 +93,7 @@ public class WorldsListController {
 
            if (world.isPresent() == true)
             {
-                world.get().setName(request.name);
+                world.get().setWorldName(request.worldName);
                 world.get().setDescription(request.description);
 
                 worldsRepository.save(world.get());
