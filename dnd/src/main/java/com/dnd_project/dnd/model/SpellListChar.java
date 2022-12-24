@@ -22,4 +22,11 @@ public class SpellListChar {
     @JsonManagedReference
     private SpellList spellList;
 
+    public SpellListChar() {
+    }
+
+    public SpellListChar(Long charId, SpellList spellList) {
+        this.charId = charId;
+        this.spellList = spellList;
+    }
 }
