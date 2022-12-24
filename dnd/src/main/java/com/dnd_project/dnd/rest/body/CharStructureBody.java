@@ -1,9 +1,9 @@
-package com.dnd_project.dnd.rest;
+package com.dnd_project.dnd.rest.body;
 
 import lombok.Data;
 
 @Data
-public class CharStructure {
+public class CharStructureBody {
 
     private String name;
     private Integer level;
@@ -25,7 +25,7 @@ public class CharStructure {
     private Long backgroundID;
     private Long ideologyID;
 
-    public CharStructure(String name, Integer level, Integer age, Integer strength, Integer dexterity, Integer constitution, Integer intelligence, Integer wisdom, Integer charisma, Integer hp, Integer addHp, Integer maxHp, Integer classArmor, Integer proficiencyBonus, Long classID, Long gendersID, Long raceID, Long backgroundID, Long ideologyID) {
+    public CharStructureBody(String name, Integer level, Integer age, Integer strength, Integer dexterity, Integer constitution, Integer intelligence, Integer wisdom, Integer charisma, Integer hp, Integer addHp, Integer maxHp, Integer classArmor, Integer proficiencyBonus, Long classID, Long gendersID, Long raceID, Long backgroundID, Long ideologyID) {
         this.name = name;
         this.level = level;
         this.age = age;

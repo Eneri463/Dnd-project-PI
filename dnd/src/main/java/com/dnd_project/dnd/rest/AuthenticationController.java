@@ -5,6 +5,7 @@ import com.dnd_project.dnd.model.Role;
 import com.dnd_project.dnd.model.User;
 import com.dnd_project.dnd.repository.ClassTableRepository;
 import com.dnd_project.dnd.repository.UserRepository;
+import com.dnd_project.dnd.rest.body.AuthenticationBody;
 import com.dnd_project.dnd.security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

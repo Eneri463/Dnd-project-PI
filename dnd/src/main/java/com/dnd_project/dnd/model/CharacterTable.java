@@ -107,4 +107,6 @@ public class CharacterTable {
         this.ideology = ideology;
     }
 
+    public CharacterTable() {
+    }
 }

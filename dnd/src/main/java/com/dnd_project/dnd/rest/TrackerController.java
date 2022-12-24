@@ -3,6 +3,7 @@ package com.dnd_project.dnd.rest;
 import com.dnd_project.dnd.model.Tracker;
 import com.dnd_project.dnd.model.TrackerInfo;
 import com.dnd_project.dnd.repository.TrackerRepository;
+import com.dnd_project.dnd.rest.body.TrackerBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

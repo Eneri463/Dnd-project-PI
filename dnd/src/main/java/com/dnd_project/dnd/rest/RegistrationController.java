@@ -2,6 +2,7 @@ package com.dnd_project.dnd.rest;
 
 import com.dnd_project.dnd.model.User;
 import com.dnd_project.dnd.repository.UserRepository;
+import com.dnd_project.dnd.rest.body.AuthenticationBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

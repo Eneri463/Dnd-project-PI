@@ -1,4 +1,4 @@
-package com.dnd_project.dnd.rest;
+package com.dnd_project.dnd.rest.body;
 
 import lombok.Data;
 

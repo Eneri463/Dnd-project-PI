@@ -2,6 +2,7 @@ package com.dnd_project.dnd.rest;
 
 import com.dnd_project.dnd.model.*;
 import com.dnd_project.dnd.repository.*;
+import com.dnd_project.dnd.rest.body.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,7 +48,7 @@ public class CharacterController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/deleteCharacter")
-    public ResponseEntity<?> deleteCharacter(@RequestBody delBody request)
+    public ResponseEntity<?> deleteCharacter(@RequestBody delElemBody request)
     {
         try {
 
@@ -72,7 +73,7 @@ public class CharacterController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/createCharacter")
-    public ResponseEntity<?> createCharacter(@RequestBody CreateCharBody request) {
+    public ResponseEntity<?> createCharacter(@RequestBody createCharBody request) {
 
         try
         {
@@ -97,6 +98,131 @@ public class CharacterController {
 
 
             return ResponseEntity.ok(1);
+        }
+        catch(Exception e)
+        {
+            return new ResponseEntity<>(e.getCause(), HttpStatus.BAD_REQUEST);
+        }
+
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PutMapping("/editCharacterStats")
+    public ResponseEntity<?> editCharStat(@RequestBody editCharStatBody request)
+    {
+        try
+        {
+            Optional<CharacterTable> charTable = characterRepository.findById(request.getId());
+
+            if (charTable.isPresent() == true)
+            {
+
+                charTable.get().setStrength(request.getStrength());
+                charTable.get().setDexterity(request.getDexterity());
+                charTable.get().setConstitution(request.getConstitution());
+                charTable.get().setIntelligence(request.getIntelligence());
+                charTable.get().setWisdom(request.getWisdom());
+                charTable.get().setCharisma(request.getCharisma());
+
+                characterRepository.save(charTable.get());
+
+                return ResponseEntity.ok("Ok");
+            }
+            else
+            {
+                return new ResponseEntity<>("There is no such character", HttpStatus.BAD_REQUEST);
+            }
+        }
+        catch(Exception e)
+        {
+            return new ResponseEntity<>(e.getCause(), HttpStatus.BAD_REQUEST);
+        }
+
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PutMapping("/editCharacterHp")
+    public ResponseEntity<?> editCharHp(@RequestBody editCharHpBody request)
+    {
+        try
+        {
+            Optional<CharacterTable> charTable = characterRepository.findById(request.getId());
+
+            if (charTable.isPresent() == true)
+            {
+
+                charTable.get().setAddHp(request.getAddHp());
+                charTable.get().setHp(request.getHp());
+
+                characterRepository.save(charTable.get());
+
+                return ResponseEntity.ok("Ok");
+            }
+            else
+            {
+                return new ResponseEntity<>("There is no such character", HttpStatus.BAD_REQUEST);
+            }
+        }
+        catch(Exception e)
+        {
+            return new ResponseEntity<>(e.getCause(), HttpStatus.BAD_REQUEST);
+        }
+
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PutMapping("/editCharacterLevel")
+    public ResponseEntity<?> editCharLevel(@RequestBody editCharLevelBody request)
+    {
+        try
+        {
+            Optional<CharacterTable> charTable = characterRepository.findById(request.getId());
+
+            if (charTable.isPresent() == true)
+            {
+
+                charTable.get().setMaxHp(request.getMaxHp());
+                charTable.get().setLevel(request.getLevel());
+                charTable.get().setProficiencyBonus(request.getProficiencyBonus());
+
+                characterRepository.save(charTable.get());
+
+                return ResponseEntity.ok("Ok");
+            }
+            else
+            {
+                return new ResponseEntity<>("There is no such character", HttpStatus.BAD_REQUEST);
+            }
+        }
+        catch(Exception e)
+        {
+            return new ResponseEntity<>(e.getCause(), HttpStatus.BAD_REQUEST);
+        }
+
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PutMapping("/editCharacterInfo")
+    public ResponseEntity<?> editCharInfo(@RequestBody editCharNameAgeBody request)
+    {
+        try
+        {
+            Optional<CharacterTable> charTable = characterRepository.findById(request.getId());
+
+            if (charTable.isPresent() == true)
+            {
+
+                charTable.get().setName(request.getName());
+                charTable.get().setAge(request.getAge());
+
+                characterRepository.save(charTable.get());
+
+                return ResponseEntity.ok("Ok");
+            }
+            else
+            {
+                return new ResponseEntity<>("There is no such character", HttpStatus.BAD_REQUEST);
+            }
         }
         catch(Exception e)
         {

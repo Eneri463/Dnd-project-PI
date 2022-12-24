@@ -4,6 +4,9 @@ import com.dnd_project.dnd.model.*;
 import com.dnd_project.dnd.repository.UserRepository;
 import com.dnd_project.dnd.repository.WorldsListRepository;
 import com.dnd_project.dnd.repository.WorldsRepository;
+import com.dnd_project.dnd.rest.body.editWorldBody;
+import com.dnd_project.dnd.rest.body.WorldBody;
+import com.dnd_project.dnd.rest.body.delElemBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -61,7 +64,7 @@ public class WorldsListController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/deleteWorld")
-    public ResponseEntity<?> deleteWorld(@RequestBody delBody request)
+    public ResponseEntity<?> deleteWorld(@RequestBody delElemBody request)
     {
         try {
 
@@ -82,13 +85,11 @@ public class WorldsListController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/editWorld")
-    public ResponseEntity<?> editWorld(@RequestBody EditWorldBody request)
+    public ResponseEntity<?> editWorld(@RequestBody editWorldBody request)
     {
         try
         {
             Optional<Worlds> world = worldsRepository.findById(request.id);
-
-            System.out.println(world.get());
 
            if (world.isPresent() == true)
             {
