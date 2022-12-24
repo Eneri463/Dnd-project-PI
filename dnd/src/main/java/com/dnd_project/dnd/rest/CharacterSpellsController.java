@@ -3,8 +3,7 @@ package com.dnd_project.dnd.rest;
 import com.dnd_project.dnd.model.*;
 import com.dnd_project.dnd.repository.SpellListCharacterRepository;
 import com.dnd_project.dnd.repository.SpellRepository;
-import com.dnd_project.dnd.rest.body.delElemBody;
-import com.dnd_project.dnd.rest.body.delOrAddBody;
+import com.dnd_project.dnd.rest.body.delOrAddSpellBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +36,7 @@ public class CharacterSpellsController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/addCharacterSpell")
-    public ResponseEntity<?> createCharacter(@RequestBody delOrAddBody request) {
+    public ResponseEntity<?> addSpellChar(@RequestBody delOrAddSpellBody request) {
 
         try
         {
@@ -46,7 +45,6 @@ public class CharacterSpellsController {
             if (spellList.isPresent() == false)
             {
                 Optional<SpellList> spell = spellRepository.searchSpell(request.getSpellId());
-                System.out.println(spell.get());
                 SpellListChar spellListChar = new SpellListChar(request.getCharId(), spell.get());
                 spellListCharacterRepository.save(spellListChar);
 
@@ -66,7 +64,7 @@ public class CharacterSpellsController {
 
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/deleteCharacterSpell")
-    public ResponseEntity<?> deleteSpell(@RequestBody delOrAddBody request)
+    public ResponseEntity<?> deleteSpell(@RequestBody delOrAddSpellBody request)
     {
         try {
 

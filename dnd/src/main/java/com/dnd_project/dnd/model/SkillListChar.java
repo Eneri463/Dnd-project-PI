@@ -20,4 +20,12 @@ public class SkillListChar {
     @JoinColumn(name = "skillID", referencedColumnName = "id")
     @JsonManagedReference
     private SkillList skillList;
+
+    public SkillListChar() {
+    }
+
+    public SkillListChar(Long charId, SkillList skillList) {
+        this.charId = charId;
+        this.skillList = skillList;
+    }
 }
