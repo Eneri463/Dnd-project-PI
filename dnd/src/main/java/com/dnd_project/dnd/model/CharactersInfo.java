@@ -1,8 +1,8 @@
 package com.dnd_project.dnd.model;
 
 public interface CharactersInfo {
-    Integer getCharId();
-    String getCharName();
+    Integer getId();
+    String getName();
     Integer getAge();
     Integer getLevel();
     Integer getStrength();

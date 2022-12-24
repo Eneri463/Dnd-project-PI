@@ -85,7 +85,7 @@ public class CharacterController {
             Ideologies ideology = ideologiesRepository.findByIdSpecial(request.charStructure.getIdeologyId());
 
 
-            CharacterTable NewChar = new CharacterTable(request.charStructure.getCharName(), request.charStructure.getLevel(),
+            CharacterTable NewChar = new CharacterTable(request.charStructure.getName(), request.charStructure.getLevel(),
                     request.charStructure.getAge(), request.charStructure.getStrength(),
                     request.charStructure.getDexterity(), request.charStructure.getConstitution(), request.charStructure.getIntelligence(),
                     request.charStructure.getWisdom(), request.charStructure.getCharisma(),request.charStructure.getHp(),
@@ -212,7 +212,7 @@ public class CharacterController {
             if (charTable.isPresent() == true)
             {
 
-                charTable.get().setCharName(request.getCharName());
+                charTable.get().setName(request.getName());
                 charTable.get().setAge(request.getAge());
 
                 characterRepository.save(charTable.get());

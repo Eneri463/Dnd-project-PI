@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class CharStructureBody {
 
-    private String charName;
+    private String name;
     private Integer level;
     private Integer age;
     private Integer strength;
@@ -26,7 +26,7 @@ public class CharStructureBody {
     private Long ideologyId;
 
     public CharStructureBody(String name, Integer level, Integer age, Integer strength, Integer dexterity, Integer constitution, Integer intelligence, Integer wisdom, Integer charisma, Integer hp, Integer addHp, Integer maxHp, Integer classArmor, Integer proficiencyBonus, Long classID, Long gendersID, Long raceID, Long backgroundID, Long ideologyID) {
-        this.charName = name;
+        this.name = name;
         this.level = level;
         this.age = age;
         this.strength = strength;

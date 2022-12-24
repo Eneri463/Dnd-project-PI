@@ -11,13 +11,27 @@ import javax.persistence.*;
 public class InventoryListCharacter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "charID")
     private Long charId;
 
+    @Column(name = "type")
+    private Integer type;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "objectID", referencedColumnName = "id")
     @JsonManagedReference
     private ObjectsList objectsList;
+
+    public InventoryListCharacter(Long charId, ObjectsList objectsList) {
+        this.charId = charId;
+        this.objectsList = objectsList;
+        this.type = 2;
+    }
+
+    public InventoryListCharacter()
+    {
+    }
 }

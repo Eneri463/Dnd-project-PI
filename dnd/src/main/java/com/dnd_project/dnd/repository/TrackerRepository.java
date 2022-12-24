@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface TrackerRepository extends JpaRepository<Tracker, Long> {
 
-    @Query("select t.charName as charName, t.initiative as initiative, t.color as color " +
+    @Query("select t.name as name, t.initiative as initiative, t.color as color " +
             "from Tracker t where t.worldId = :id")
     List<TrackerInfo> showInitiative(Long id);
 

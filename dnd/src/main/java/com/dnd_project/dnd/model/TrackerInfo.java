@@ -1,7 +1,7 @@
 package com.dnd_project.dnd.model;
 
 public interface TrackerInfo {
-    String getCharName();
+    String getName();
     Double getInitiative();
     String getColor();
 

@@ -13,10 +13,10 @@ public class CharacterTable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "charID")
-    private Long charId;
+    private Long id;
 
     @Column(name = "name")
-    private String charName;
+    private String name;
 
     @Column(name = "level")
     private Integer level;
@@ -87,7 +87,7 @@ public class CharacterTable {
     private CharacterListTable characterListTable;
 
     public CharacterTable(String name, Integer level, Integer age, Integer strength, Integer dexterity, Integer constitution, Integer intelligence, Integer wisdom, Integer charisma, Integer hp, Integer addHp, Integer maxHp, Integer classArmor, Integer proficiencyBonus, ClassTable classtable, Genders genders, Race race, Backgrounds background, Ideologies ideology) {
-        this.charName = name;
+        this.name = name;
         this.level = level;
         this.age = age;
         this.strength = strength;

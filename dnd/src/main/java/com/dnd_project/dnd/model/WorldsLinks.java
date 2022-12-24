@@ -13,7 +13,7 @@ public class WorldsLinks {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long linksId;
+    private Long id;
 
     @Column(name = "userID")
     private Long userId;

@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class editCharNameAgeBody {
     private Long id;
-    private String charName;
+    private String name;
     private Integer age;
 }

@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class InitiativeBody {
-    private String charName;
+    private String name;
     private Double initiative;
     private String color;
 }

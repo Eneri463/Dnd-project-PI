@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface UsersCharactersRepository extends JpaRepository<CharacterListTable, Long> {
 
-    @Query("select t.charTable.charName as charName, t.charTable.charId as charId,  t.charTable.classTable.className as className," +
+    @Query("select t.charTable.name as name, t.charTable.id as id,  t.charTable.classTable.name as className," +
             " t.charTable.level as level " +
             "from CharacterListTable t where t.userId = :id")
     List<UsersCharacters> searchCharacters(Long id);

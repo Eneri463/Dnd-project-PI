@@ -16,7 +16,7 @@ public class Tracker {
     private Long worldId;
 
     @Column(name = "name")
-    private String charName;
+    private String name;
 
     @Column(name = "initiative")
     private Double initiative;
@@ -26,7 +26,7 @@ public class Tracker {
 
     public Tracker(Long worldID, String name, Double initiative, String color) {
         this.worldId = worldID;
-        this.charName = name;
+        this.name = name;
         this.initiative = initiative;
         this.color = color;
     }

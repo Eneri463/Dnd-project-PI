@@ -14,7 +14,7 @@ public class Race {
     private Long id;
 
     @Column(name = "name")
-    private String raceName;
+    private String name;
 
     @Column(name = "description")
     private String description;

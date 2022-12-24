@@ -14,7 +14,7 @@ public class Backgrounds {
     private Long id;
 
     @Column(name = "name")
-    private String backgroundName;
+    private String name;
 
     @Column(name = "description")
     private String description;

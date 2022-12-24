@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface WorldsListRepository extends JpaRepository<WorldsLinks, Long> {
 
-    @Query("select t.worlds.worldName as worldName, t.worlds.id as id, t.worlds.description as description " +
+    @Query("select t.worlds.name as name, t.worlds.id as id, t.worlds.description as description " +
             "from WorldsLinks t where t.userId = :id")
     List<UsersWorlds> searchWorlds(Long id);
 
