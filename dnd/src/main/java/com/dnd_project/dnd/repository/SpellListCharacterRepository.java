@@ -23,4 +23,9 @@ public interface SpellListCharacterRepository extends JpaRepository<SpellListCha
 
     @Query("select t from SpellListChar t where t.charId = :charID AND t.spellList.id = :spellID")
     Optional<SpellListChar> searchCombination(Long charID, Long spellID);
+
+    @Transactional
+    @Modifying
+    @Query("delete from SpellListChar t where t.charId = :charID AND t.spellList.id = :spellID")
+    void deleteSpell(Long charID, Long spellID);
 }

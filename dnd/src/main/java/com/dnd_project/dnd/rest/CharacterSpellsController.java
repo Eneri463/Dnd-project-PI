@@ -3,6 +3,7 @@ package com.dnd_project.dnd.rest;
 import com.dnd_project.dnd.model.*;
 import com.dnd_project.dnd.repository.SpellListCharacterRepository;
 import com.dnd_project.dnd.repository.SpellRepository;
+import com.dnd_project.dnd.rest.body.delElemBody;
 import com.dnd_project.dnd.rest.body.delOrAddBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -49,7 +50,7 @@ public class CharacterSpellsController {
                 SpellListChar spellListChar = new SpellListChar(request.getCharId(), spell.get());
                 spellListCharacterRepository.save(spellListChar);
 
-                return ResponseEntity.ok("ok");
+                return ResponseEntity.ok("Ok");
             }
             else
             {
@@ -61,6 +62,23 @@ public class CharacterSpellsController {
             return new ResponseEntity<>("Something went wrong", HttpStatus.BAD_REQUEST);
         }
 
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping("/deleteCharacterSpell")
+    public ResponseEntity<?> deleteSpell(@RequestBody delOrAddBody request)
+    {
+        try {
+
+            spellListCharacterRepository.deleteSpell(request.getCharId(), request.getSpellId());
+
+            return ResponseEntity.ok("Ok");
+
+        }
+        catch(Exception e)
+        {
+            return new ResponseEntity<>(e.getCause(), HttpStatus.BAD_REQUEST);
+        }
     }
 
 
