@@ -37,6 +37,9 @@ public class CharacterController {
     @Autowired
     private GenderRepository genderRepository;
 
+    @Autowired
+    private ConditionListRepository conditionListRepository;
+
 
 
     @CrossOrigin(origins = "http://localhost:4200")
@@ -59,6 +62,8 @@ public class CharacterController {
                 spellListCharacterRepository.deleteByCharID(request.id[i]);
                 skillListCharacterRepository.deleteByCharID(request.id[i]);
                 inventoryListRepository.deleteByCharID(request.id[i]);
+                conditionListRepository.deleteByCharID(request.id[i]);
+
             }
 
             return ResponseEntity.ok(request.id.length);
