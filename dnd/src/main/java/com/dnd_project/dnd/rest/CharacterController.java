@@ -126,7 +126,7 @@ public class CharacterController {
 
                 characterRepository.save(charTable.get());
 
-                return ResponseEntity.ok("Ok");
+                return ResponseEntity.ok(1);
             }
             else
             {
@@ -156,7 +156,7 @@ public class CharacterController {
 
                 characterRepository.save(charTable.get());
 
-                return ResponseEntity.ok("Ok");
+                return ResponseEntity.ok(1);
             }
             else
             {
@@ -187,7 +187,7 @@ public class CharacterController {
 
                 characterRepository.save(charTable.get());
 
-                return ResponseEntity.ok("Ok");
+                return ResponseEntity.ok(1);
             }
             else
             {
@@ -217,7 +217,7 @@ public class CharacterController {
 
                 characterRepository.save(charTable.get());
 
-                return ResponseEntity.ok("Ok");
+                return ResponseEntity.ok(1);
             }
             else
             {

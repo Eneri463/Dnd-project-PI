@@ -98,7 +98,7 @@ public class WorldsListController {
 
                 worldsRepository.save(world.get());
 
-                return ResponseEntity.ok("ok");
+                return ResponseEntity.ok(1);
             }
             else
             {

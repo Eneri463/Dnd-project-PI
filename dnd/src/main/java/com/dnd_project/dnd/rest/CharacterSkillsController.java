@@ -49,7 +49,7 @@ public class CharacterSkillsController {
                 SkillListChar skillListChar = new SkillListChar(request.getCharId(), skill.get());
                 skillListCharacterRepository.save(skillListChar);
 
-                return ResponseEntity.ok("Ok");
+                return ResponseEntity.ok(1);
             }
             else
             {
@@ -71,7 +71,7 @@ public class CharacterSkillsController {
 
             skillListCharacterRepository.deleteSkill(request.getCharId(), request.getSkillId());
 
-            return ResponseEntity.ok("Ok");
+            return ResponseEntity.ok(1);
 
         }
         catch(Exception e)

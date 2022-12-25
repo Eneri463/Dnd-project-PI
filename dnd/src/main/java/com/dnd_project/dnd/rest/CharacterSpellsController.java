@@ -48,7 +48,7 @@ public class CharacterSpellsController {
                 SpellListChar spellListChar = new SpellListChar(request.getCharId(), spell.get());
                 spellListCharacterRepository.save(spellListChar);
 
-                return ResponseEntity.ok("Ok");
+                return ResponseEntity.ok(1);
             }
             else
             {
@@ -70,7 +70,7 @@ public class CharacterSpellsController {
 
             spellListCharacterRepository.deleteSpell(request.getCharId(), request.getSpellId());
 
-            return ResponseEntity.ok("Ok");
+            return ResponseEntity.ok(1);
 
         }
         catch(Exception e)
