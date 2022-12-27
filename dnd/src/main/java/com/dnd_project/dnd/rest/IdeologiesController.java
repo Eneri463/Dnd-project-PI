@@ -15,7 +15,7 @@ public class IdeologiesController {
     @Autowired
     private IdeologiesRepository ideologiesRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/listIdeologies")
     public List<Ideologies> getIdeologyInfo()
     {

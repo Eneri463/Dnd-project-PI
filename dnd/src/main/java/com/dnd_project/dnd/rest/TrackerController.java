@@ -15,13 +15,13 @@ public class TrackerController {
     @Autowired
     private TrackerRepository trackerRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/getTracker")
     public List<TrackerInfo> getInitiative(@RequestParam Long id) {
         return trackerRepository.showInitiative(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PutMapping("/editTracker")
     public ResponseEntity<?> editTracker(@RequestBody TrackerBody request) {
 

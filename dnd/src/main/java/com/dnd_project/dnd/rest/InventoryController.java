@@ -22,21 +22,21 @@ public class InventoryController {
     @Autowired
     private ObjectRepository objectRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/characterInventory")
     public List<CharInventory> getCharacterInventory(@RequestParam Long id)
     {
         return inventoryListRepository.searchInventory(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/listItems")
     public List<ObjectsList> getListObjects()
     {
         return objectRepository.findAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PostMapping("/addCharacterItem")
     public ResponseEntity<?> addObjectChar(@RequestBody delOrAddObjectBody request) {
 
@@ -54,7 +54,7 @@ public class InventoryController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/deleteCharacterItem")
     public ResponseEntity<?> deleteObjectChar(@RequestParam Long id)
     {
@@ -70,7 +70,7 @@ public class InventoryController {
     }
 
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PutMapping("/priorityObject")
     public ResponseEntity<?> updateObjectType(@RequestBody updateObjectType request)
     {

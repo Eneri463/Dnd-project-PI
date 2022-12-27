@@ -20,21 +20,21 @@ public class CharacterSpellsController {
     private SpellRepository spellRepository;
 
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/characterSpells")
     public List<CharSpells> getCharactersSpell(@RequestParam Long id)
     {
         return spellListCharacterRepository.searchSpells(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/listSpells")
     public List<SpellList> getListSpell()
     {
         return spellRepository.findAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PostMapping("/addCharacterSpell")
     public ResponseEntity<?> addSpellChar(@RequestBody delOrAddSpellBody request) {
 
@@ -62,7 +62,7 @@ public class CharacterSpellsController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/deleteCharacterSpell")
     public ResponseEntity<?> deleteSpell(@RequestBody delOrAddSpellBody request)
     {

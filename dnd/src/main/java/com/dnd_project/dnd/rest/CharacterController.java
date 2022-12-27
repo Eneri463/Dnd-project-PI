@@ -42,14 +42,14 @@ public class CharacterController {
 
 
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/characterInfo")
     public CharactersInfo getCharacterInfo(@RequestParam Long id)
     {
         return characterRepository.searchCharactersInfo(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/deleteCharacter")
     public ResponseEntity<?> deleteCharacter(@RequestBody delElemBody request)
     {
@@ -76,7 +76,7 @@ public class CharacterController {
 
 
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PostMapping("/createCharacter")
     public ResponseEntity<?> createCharacter(@RequestBody createCharBody request) {
 
@@ -111,7 +111,7 @@ public class CharacterController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PutMapping("/editCharacterStats")
     public ResponseEntity<?> editCharStat(@RequestBody editCharStatBody request)
     {
@@ -145,7 +145,7 @@ public class CharacterController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PutMapping("/editCharacterHp")
     public ResponseEntity<?> editCharHp(@RequestBody editCharHpBody request)
     {
@@ -175,7 +175,7 @@ public class CharacterController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PutMapping("/editCharacterLevel")
     public ResponseEntity<?> editCharLevel(@RequestBody editCharLevelBody request)
     {
@@ -206,7 +206,7 @@ public class CharacterController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PutMapping("/editCharacterInfo")
     public ResponseEntity<?> editCharInfo(@RequestBody editCharNameAgeBody request)
     {

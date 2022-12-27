@@ -26,20 +26,20 @@ public class WorldsListController {
     private UserRepository userRepository;
 
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/getListWorlds")
     public List<UsersWorlds> getWorldsList(@RequestParam String login) {
         Optional<User> user = userRepository.findByLogin(login);
         return worldsListRepository.searchWorlds(user.get().getId());
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/getWorld")
     public UsersWorld getWorld(@RequestParam Long id) {
                 return worldsRepository.searchWorldInfo(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PostMapping("/createWorld")
     public ResponseEntity<?> newWorld(@RequestBody WorldBody request) {
 
@@ -62,7 +62,7 @@ public class WorldsListController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/deleteWorld")
     public ResponseEntity<?> deleteWorld(@RequestBody delElemBody request)
     {
@@ -83,7 +83,7 @@ public class WorldsListController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PutMapping("/editWorld")
     public ResponseEntity<?> editWorld(@RequestBody editWorldBody request)
     {

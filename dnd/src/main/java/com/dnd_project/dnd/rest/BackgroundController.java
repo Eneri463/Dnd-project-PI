@@ -16,7 +16,7 @@ public class BackgroundController {
     @Autowired
     private BackgroundsRepository backgroundsRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/listBackgrounds")
     public List<Backgrounds> getBackInfo()
     {

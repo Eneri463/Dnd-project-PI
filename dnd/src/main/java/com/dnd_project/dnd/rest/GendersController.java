@@ -18,7 +18,7 @@ public class GendersController {
     @Autowired
     private GenderRepository genderRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/listGenders")
     public List<Genders> getBackInfo()
     {

@@ -17,7 +17,7 @@ public class CharClassController {
     @Autowired
     private ClassTableRepository classTableRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/listClasses")
     public List<ClassTable> getCInfo()
     {

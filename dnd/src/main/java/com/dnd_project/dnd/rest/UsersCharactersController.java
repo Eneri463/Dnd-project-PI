@@ -20,7 +20,7 @@ public class UsersCharactersController {
     @Autowired
     private UserRepository userRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/getListCharacters")
     public List<UsersCharacters> getCharacterInfo(@RequestParam String login)
     {

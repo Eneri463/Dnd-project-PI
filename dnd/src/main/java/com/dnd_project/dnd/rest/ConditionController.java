@@ -21,21 +21,21 @@ public class ConditionController {
     @Autowired
     private ConditionRepository conditionRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/characterConditions")
     public List<CharCondition> getCharactersConditions(@RequestParam Long id)
     {
         return conditionListRepository.searchCondition(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/listConditions")
     public List<ConditionList> getListConditions()
     {
         return conditionRepository.findAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PostMapping("/addCharacterCondition")
     public ResponseEntity<?> addConditionChar(@RequestBody delOrAddConditionBody request) {
 
@@ -63,7 +63,7 @@ public class ConditionController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/deleteCharacterCondition")
     public ResponseEntity<?> deleteSpell(@RequestBody delOrAddConditionBody request)
     {

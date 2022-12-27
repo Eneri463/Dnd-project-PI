@@ -20,7 +20,7 @@ public class RegistrationController {
     @Autowired
     private UserRepository userRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PostMapping("/registration")
     public ResponseEntity<?> Registration(@RequestBody AuthenticationBody request)
     {

@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class AuthenticationController {
     private final AuthenticationManager authenticationManager;
@@ -35,7 +36,6 @@ public class AuthenticationController {
         this.jwtTokenProvider = jwtTokenProvider;
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/login")
     public ResponseEntity<?> authenticate(@RequestBody AuthenticationBody request)
     {
@@ -55,7 +55,6 @@ public class AuthenticationController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/logout")
     public void logout(HttpServletRequest request, HttpServletResponse response)
     {
@@ -83,7 +82,7 @@ public class AuthenticationController {
         @Autowired
         private ClassTableRepository classTableRepository;
 
-        @CrossOrigin(origins = "http://localhost:4200")
+        @CrossOrigin(origins = "*")
         @GetMapping("/listClasses")
         public List<ClassTable> getClassesInfo()
         {

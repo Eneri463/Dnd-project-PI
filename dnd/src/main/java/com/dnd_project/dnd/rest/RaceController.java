@@ -16,7 +16,7 @@ public class RaceController {
     @Autowired
     private RaceRepository raceRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/listRaces")
     public List<Race> getRacesInfo()
     {

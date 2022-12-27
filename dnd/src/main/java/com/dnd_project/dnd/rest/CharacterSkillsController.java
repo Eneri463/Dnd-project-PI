@@ -21,21 +21,21 @@ public class CharacterSkillsController {
     @Autowired
     private SkillRepository skillRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/characterSkills")
     public List<CharSkill> getCharactersSkills(@RequestParam Long id)
     {
         return skillListCharacterRepository.searchSkills(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/listSkills")
     public List<SkillList> getListSkills()
     {
         return skillRepository.findAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PostMapping("/addCharacterSkill")
     public ResponseEntity<?> addSkillChar(@RequestBody delOrAddSkillBody request) {
 
@@ -63,7 +63,7 @@ public class CharacterSkillsController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/deleteCharacterSkill")
     public ResponseEntity<?> deleteSkill(@RequestBody delOrAddSkillBody request)
     {
